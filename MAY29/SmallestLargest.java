@@ -1,9 +1,9 @@
-// smallest and largest element
+//write a program to find Smallest and Largest Element in an Array
 class SmallestLargest
 {
 	public static void main(String[] args) 
 	{
-		int[] a={2,3,6,2,1,7};
+		int[] a={2,3,6,5,7,3,0,9,1,2,1,7};
 		largest(a);
 		Smallest(a);
 	}

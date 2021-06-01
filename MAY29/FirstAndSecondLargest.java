@@ -1,4 +1,4 @@
-// First and Second  largest element of an array
+// Write a program to find First and Second  largest element of an array
 class FirstAndSecondLargest
 
 {
@@ -24,8 +24,7 @@ class FirstAndSecondLargest
 				smax=a[i];
 			}
 		}
-		System.out.println(fmax);
-		System.out.println(smax);
+		System.out.println(fmax+" is the largest and "+smax+" is the secong largest ");
 
 		}
 }
