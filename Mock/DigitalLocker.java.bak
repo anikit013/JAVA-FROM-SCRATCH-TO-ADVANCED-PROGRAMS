@@ -1,0 +1,154 @@
+import java.util.Scanner;
+class DigitalLocker 
+{
+	public static void main(String[] args) 
+	{
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter Digital lock number ");
+		int num =sc.nextInt();
+		
+
+		if(isArmstrong(num,getCount(num)))
+		{
+			even(num);
+		}
+		else
+		{
+			odd(num);
+		}
+	}
+	public static void even(int num)
+	{
+		int sum=0;
+		
+		while(num>0)
+		{
+			int x=num%10;
+			
+			if((x)%2==0)
+			{
+				sum=sum+x;
+			}
+			num=num/10;
+
+		}
+		System.out.println(sum);
+	}
+	public static void odd(int num)
+	{
+		int sum=0;
+		while(num>0)
+		{
+			int x=num%10;
+			if((x)%2!=0)
+			{
+				sum=sum+x;
+			}
+			num=num/10;
+
+		}
+		System.out.println(sum);
+	}
+
+	public static int getCount(int num)
+	{
+		int count=0;
+		while(num>0)
+		{
+			count++;
+			num/=10;
+		}
+		return count;
+	}
+	public static boolean isArmstrong(int num,int count)
+	{
+		int sum=0,temp=num;
+		while(num>0)
+		{
+			sum=sum+(int)Math.pow(num%10,count);
+			num/=10;
+
+		}
+		return sum==temp?true:false;
+	}
+}
+[9:53 am, 04/09/2021] Pulkit: import java.util.Scanner;
+class PrimeNumbers 
+{
+	public static void main(String[] args) 
+	{
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter First range");
+		int a=sc.nextInt();
+		System.out.println("Enter Ending range");
+		int z=sc.nextInt();
+		System.out.println();
+		for(int i=a;i<=z;i++)
+		{
+			if(printPrimeNumbers(i))
+			{
+				System.out.println(i);
+			}
+		}
+	}
+	public static boolean printPrimeNumbers(int num)
+	{
+		if(num==1)
+		{
+			return false;
+		}
+		else
+		{
+			for(int i=2;i<num;i++)
+			{
+				if(num % i ==0)
+				{
+					return false;
+				}
+			}
+			return true;
+		}
+	}
+}
+[9:53 am, 04/09/2021] Pulkit: import java.util.Scanner;
+class SecondLargestNum
+{
+	public static void main(String[] args) 
+	{
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter Array Length");
+		int length=sc.nextInt();
+
+		int[] a=new int[length];
+		System.out.println("Enter Array Elements");
+		for(int i=0;i<length;i++)
+		{
+			a[i]=sc.nextInt();
+		}
+		System.out.println();
+		
+		secondLargestNum(a);
+	}
+	public static void secondLargestNum(int[] a)
+	{
+		int max=a[0];
+		for(int i=1;i<a.length;i++)
+		{
+			if(a[i]>max)
+			{
+				max=a[i];
+			}
+		}
+		
+		int second=a[0];
+		for(int i=1;i<a.length;i++)
+		{
+			if(a[i]>second && a[i]!=max)
+			{
+				second=a[i];
+			}
+		}
+		System.out.print("Second Largest Num= "+second);
+	}
+	
+}
