@@ -1,0 +1,52 @@
+//Program to print the smallest prime in a given series of numbers
+class SmallestPrimeNumberInSeries  
+{
+	public static void main(String[] args) 
+	{
+		int small=1;
+		int[] a = {4,16,1,15,20,25};
+		for (int num : a)
+		{
+			 if (IsPrime(num))
+			 {
+				if(small==1)
+				 {
+					small=num;
+				 }
+				 {
+			        if(num<small)
+			          {
+				          small=num;
+			          }
+		           }
+			 }
+		}
+		if(small==1)
+		{
+			System.out.println("Array doesn't have prime number");
+		}
+		else
+		{
+			System.out.println("Smallest="+small);
+		}
+	}
+
+	public static boolean IsPrime(int num)
+	{
+		if(num==1)
+		{
+			return false;
+		}
+		else
+		{
+			for (int i=2;i<num ;i++ )
+			{
+				if (num%i==0)
+				{
+					return false;
+				}
+			}
+			return  true;
+		}
+	}
+}
